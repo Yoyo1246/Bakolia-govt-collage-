@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Result Page with Table</title>
+    <!-- Import Roboto font -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+        }
+        .headline {
+            color: green;
+            font-family: 'Roboto', sans-serif;
+            font-size: 36px;
+        }
+        table {
+            width: 50%;
+            margin: 20px auto;
+            border-collapse: collapse;
+        }
+        th, td {
+            padding: 10px;
+            text-align: center;
+            border: 1px solid #ddd;
+        }
+        select, input {
+            padding: 5px;
+            width: 200px;
+        }
+        button {
+            margin-top: 20px;
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        #resultImage {
+            display: none; /* Initially hide the image */
+            margin-top: 20px;
+            width: 300px;
+            height: auto;
+        }
+        .error-message {
+            color: red;
+            font-size: 16px;
+            margin-top: 10px;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+
+    <h1 class="headline">বাকলিয়া সরকারি কলেজ, চট্টগ্রাম</h1>
+
+    <!-- Simple Table -->
+    <table>
+        <tr>
+            <th>Field</th>
+            <th>Details</th>
+        </tr>
+        <tr>
+            <td>Roll Number</td>
+            <td>
+                <input type="text" id="rollNumber" placeholder="Enter Roll Number">
+            </td>
+        </tr>
+        <tr>
+            <td>Education Level</td>
+            <td>
+                <select>
+                    <option value="higher_secondary">Higher Secondary</option>
+                    <option value="undergraduate">Undergraduate</option>
+                    <option value="postgraduate">Postgraduate</option>
+                    <option value="other">Other</option>
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <td>Department</td>
+            <td>
+                <select>
+                    <option value="science">Science</option>
+                    <option value="humanities">Humanities</option>
+                    <option value="business_study">Business Study</option>
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <td>Education Year</td>
+            <td>
+                <select>
+                    <option value="2022_2023">2022-2023</option>
+                    <option value="2023_2024">2023-2024</option>
+                    <option value="2024_2025">2024-2025</option>
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <td>Exam</td>
+            <td>
+                <select>
+                    <option value="xi_pre_test">Xi Pre Test</option>
+                    <option value="xii_pre_test">Xii Pre Test</option>
+                    <option value="xi_final_exam">Xi Final Exam</option>
+                    <option value="xii_test">Xii Test</option>
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <td>Class</td>
+            <td>
+                <select>
+                    <option value="first_year">First Year</option>
+                    <option value="second_year">Second Year</option>
+                </select>
+            </td>
+        </tr>
+    </table>
+
+    <!-- View Result Button -->
+    <button onclick="viewResult()">View Result</button>
+
+    <!-- Result Image (hidden initially) -->
+    <img id="resultImage" src="image1234.jpg" alt="Result Image">
+
+    <!-- Error Message (hidden initially) -->
+    <div id="errorMessage" class="error-message">Result not found</div>
+
+    <script>
+        function viewResult() {
+            // Get the value of the roll number input
+            var rollNumber = document.getElementById("rollNumber").value;
+
+            // Check if the entered roll number matches the valid roll number
+            if (rollNumber === "2314011316") {
+                // Show the result image
+                document.getElementById("resultImage").style.display = "block";
+                // Hide error message if valid roll number
+                document.getElementById("errorMessage").style.display = "none";
+            } else {
+                // Show error message if roll number is invalid
+                document.getElementById("errorMessage").style.display = "block";
+                // Hide the result image
+                document.getElementById("resultImage").style.display = "none";
+            }
+        }
+    </script>
+
+</body>
+</html>
